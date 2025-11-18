@@ -131,7 +131,7 @@ public class ArrCharOps {
         int n = arr.length;
         long num = 0;
         if (arr.length == 0) {
-            return -1;
+            return 0;
         }
         for(int i = 0; i < arr.length; i++) {
             num = num + (arr[i] * (long)Math.pow(7, n-1));
@@ -166,7 +166,6 @@ public class ArrCharOps {
      *         return -2 if there is an error with the input.
      */
     public static int compareTo(String str1, String str2) {
-        String abc = "abcdefghijklmnopqrstuvwxyz";
         int len1 = str1.length();
         int len2 = str2.length();
         int minLen = Math.min(len1, len2);
@@ -176,8 +175,6 @@ public class ArrCharOps {
             if (str1.charAt(i) != str2.charAt(i)) {
                 char ch1 = str1.charAt(i);
                 char ch2 = str2.charAt(i);
-                int ch1Place = abc.indexOf(ch1);
-                int ch2Place = abc.indexOf(ch2);
                 if (ch1 > ch2) {
                     return 1;
                 } else {
