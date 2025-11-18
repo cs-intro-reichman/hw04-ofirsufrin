@@ -24,15 +24,14 @@ public class KeywordsDetector {
     public static void detectAndPrint(String[] sentences, String[] keywords) {
         int sentencesLen = sentences.length;
         int keywordsLen = keywords.length;
-        for (int i = 0; i < sentencesLen; i++) {
-            sentences[i] = sentences[i].toLowerCase();
-        }
+
         for (int i = 0; i < keywordsLen; i++) {
             keywords[i] = keywords[i].toLowerCase();
         }
         for (int i = 0; i < sentencesLen; i++) { // לולאה עבור כל משפט
+            String correctSen = sentences[i].toLowerCase();
             for (int j = 0; j < keywordsLen; j++) { // ללולאה עבור כל מילה בKEY
-                if (sentences[i].indexOf(keywords[j]) != -1) {
+                if (correctSen.indexOf(keywords[j]) != -1) {
                     System.out.println(sentences[i]);
                     break;
 
